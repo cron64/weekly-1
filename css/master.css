@@ -46,7 +46,7 @@ body .stage .card:hover .inner__top .container-circle .circle-1 {
   left: 0;
 }
 body .stage .card:hover .inner__top .container-circle .circle-3 {
-  left: 40px;
+  left: 30px;
 }
 body .stage .card:hover .inner__top .avatars .info {
   opacity: 1;
@@ -228,8 +228,8 @@ body .stage .card:hover .inner__top .item:last-child {
 }
 .container-circle .circle-1,
 .container-circle .circle-3 {
-  width: 18px;
-  height: 12px;
+  width: 30px;
+  height: 20px;
 }
 @-moz-keyframes pop-in {
   0% {
