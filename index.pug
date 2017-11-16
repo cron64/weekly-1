@@ -8,8 +8,13 @@ html(lang="es")
 		.stage
 			.card
 				.inner__top
-					a.like(href="#")
-						img.pop-in__child(src="img/like.svg", alt="like")
+					
+					.container-circle
+						.circle.circle-1
+						.circle.circle-2.like
+							a(href="#")
+								img.pop-in__child(src="img/like.svg", alt="like")
+						.circle.circle-3
 
 					.avatars
 						ul.list
@@ -18,7 +23,18 @@ html(lang="es")
 								li.item
 									img.img(src='img/img-' + i + '.jpg' alt='avatar')
 							li.item.item__count
+						.info
+							small.small 23 lectures
+							b.bold 3 hours video
 								| 4+
+
+					svg.svg
+						defs
+							filter#liquid
+								feGaussianBlur(in="SourceGraphic" stdDeviation="5" result="gaussianBlur")
+								feColorMatrix(in="gaussianBlur" type='matrix' values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 12 -6" result="color-matrix")
+								feBlend(in="SourceGraphic" in2="color-matrix")
+
 				.inner__bottom
 					h2.card__title This is an awesome title for the card.
 					p.card__txt And this is a paragraph for the real awesomeness of the card.

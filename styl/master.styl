@@ -32,15 +32,33 @@ body
 			
 			&:hover .inner__top .like
 				animation pop-in .2s forwards
-				animation-delay .15s
+				// animation-delay .15s
+			
 			
 			&:hover .inner__top .like .pop-in__child
-				animation pop-in__child .3s forwards
+				animation pop-in__child .25s forwards
 				animation-delay .2s
+				
+			&:hover .inner__top .container-circle
+				opacity 1
+				bottom -30px
+			
+			&:hover .inner__top .avatars .info
+				opacity 1
+			&:hover .inner__top .avatars .info .small
+			&:hover .inner__top .avatars .info .bold
+				bottom -10px
+				
+			&:hover .inner__top .avatars .info .bold
+				transition-delay .1s
+				
+				
 				
 			.inner
 				&__bottom
+					position relative
 					padding 0 20px
+					z-index 4
 					.card
 						&__title
 							font-size 1.2em
@@ -67,8 +85,28 @@ body
 					background-image url('../img/top-bg.jpg')
 					background-size cover
 					
+						
 					.avatars
 						display inline-block
+						.info
+							opacity 0
+							font-size 1em
+							position absolute
+							top 60px
+							left 20px
+							transition opacity .3s ease
+							.small
+							.bold
+								display block
+								position relative
+								transition bottom .3s ease
+								color white
+							.small
+								font-weight 100
+								bottom -30px
+							.bold
+								bottom -30px
+								
 						.list
 							padding 0
 							.item
@@ -97,12 +135,13 @@ body
 									border-radius 50%
 									overflow hidden
 					.like
-						background white
+						// background white
+						z-index 3
 						position absolute
-						bottom -30px
-						left 50%
+						// bottom -30px
+						// left 50%
 						transform translate(-50%)
-						padding 10px
+						padding 7px
 						border-radius 50%
 						width 20px
 						height 20px
@@ -129,6 +168,7 @@ body
 	animation pop-in 1s forwards
 	&__child
 		opacity 0
+		width 100%
 		
 
 	
@@ -137,7 +177,7 @@ body
 		bottom -30px
 		opacity 0
 	100%
-		bottom -20px
+		bottom 15px
 		opacity 1
 	
 @keyframes pop-in__child
@@ -151,4 +191,38 @@ body
 		transform scale(1)
 		opacity 1
 
+
+// liquid
+.container-circle
+	will-change bottom, opacity
+	transition bottom .3s ease
+	filter url("#liquid")
+	position absolute
+	transform translate(-50%)
+	left 50%
+	opacity 0
+	bottom -35px
+	width 58px
+	height 32px
+	display block
 	
+	.circle
+		position absolute
+		width 32px
+		height 32px
+		background-color white
+		border-radius 50%
+	
+	.circle-1
+		left 0
+	.circle-2
+		left 30px
+		bottom 0
+	.circle-3
+		left 40px
+
+	.circle-1
+	.circle-3
+		width 18px
+		height 12px
+		

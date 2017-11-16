@@ -33,14 +33,29 @@ body .stage .card:hover .inner__top {
 }
 body .stage .card:hover .inner__top .like {
   animation: pop-in 0.2s forwards;
-  animation-delay: 0.15s;
 }
 body .stage .card:hover .inner__top .like .pop-in__child {
-  animation: pop-in__child 0.3s forwards;
+  animation: pop-in__child 0.25s forwards;
   animation-delay: 0.2s;
 }
+body .stage .card:hover .inner__top .container-circle {
+  opacity: 1;
+  bottom: -30px;
+}
+body .stage .card:hover .inner__top .avatars .info {
+  opacity: 1;
+}
+body .stage .card:hover .inner__top .avatars .info .small,
+body .stage .card:hover .inner__top .avatars .info .bold {
+  bottom: -10px;
+}
+body .stage .card:hover .inner__top .avatars .info .bold {
+  transition-delay: 0.1s;
+}
 body .stage .card .inner__bottom {
+  position: relative;
   padding: 0 20px;
+  z-index: 4;
 }
 body .stage .card .inner__bottom .card__title {
   font-size: 1.2em;
@@ -70,6 +85,28 @@ body .stage .card .inner__top {
 }
 body .stage .card .inner__top .avatars {
   display: inline-block;
+}
+body .stage .card .inner__top .avatars .info {
+  opacity: 0;
+  font-size: 1em;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  transition: opacity 0.3s ease;
+}
+body .stage .card .inner__top .avatars .info .small,
+body .stage .card .inner__top .avatars .info .bold {
+  display: block;
+  position: relative;
+  transition: bottom 0.3s ease;
+  color: #fff;
+}
+body .stage .card .inner__top .avatars .info .small {
+  font-weight: 100;
+  bottom: -30px;
+}
+body .stage .card .inner__top .avatars .info .bold {
+  bottom: -30px;
 }
 body .stage .card .inner__top .avatars .list {
   padding: 0;
@@ -101,12 +138,10 @@ body .stage .card .inner__top .avatars .list .item .img {
   overflow: hidden;
 }
 body .stage .card .inner__top .like {
-  background: #fff;
+  z-index: 3;
   position: absolute;
-  bottom: -30px;
-  left: 50%;
   transform: translate(-50%);
-  padding: 10px;
+  padding: 7px;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -137,6 +172,42 @@ body .stage .card:hover .inner__top .item:last-child {
 }
 .pop-in__child {
   opacity: 0;
+  width: 100%;
+}
+.container-circle {
+  will-change: bottom, opacity;
+  transition: bottom 0.3s ease;
+  filter: url("#liquid");
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  opacity: 0;
+  bottom: -35px;
+  width: 58px;
+  height: 32px;
+  display: block;
+}
+.container-circle .circle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.container-circle .circle-1 {
+  left: 0;
+}
+.container-circle .circle-2 {
+  left: 30px;
+  bottom: 0;
+}
+.container-circle .circle-3 {
+  left: 40px;
+}
+.container-circle .circle-1,
+.container-circle .circle-3 {
+  width: 18px;
+  height: 12px;
 }
 @-moz-keyframes pop-in {
   0% {
@@ -144,7 +215,7 @@ body .stage .card:hover .inner__top .item:last-child {
     opacity: 0;
   }
   100% {
-    bottom: -20px;
+    bottom: 15px;
     opacity: 1;
   }
 }
@@ -154,7 +225,7 @@ body .stage .card:hover .inner__top .item:last-child {
     opacity: 0;
   }
   100% {
-    bottom: -20px;
+    bottom: 15px;
     opacity: 1;
   }
 }
@@ -164,7 +235,7 @@ body .stage .card:hover .inner__top .item:last-child {
     opacity: 0;
   }
   100% {
-    bottom: -20px;
+    bottom: 15px;
     opacity: 1;
   }
 }
@@ -174,7 +245,7 @@ body .stage .card:hover .inner__top .item:last-child {
     opacity: 0;
   }
   100% {
-    bottom: -20px;
+    bottom: 15px;
     opacity: 1;
   }
 }
