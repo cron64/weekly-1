@@ -1,0 +1,24 @@
+doctype html
+html(lang="es")
+	head
+		title Weeckly challenge - Semana 1
+		link(rel="stylesheet", href="css/master.css")
+	body
+		.bg 
+		.stage
+			.card
+				.inner__top
+					a.like(href="#")
+						img.pop-in__child(src="img/like.svg", alt="like")
+
+					.avatars
+						ul.list
+							- max = 5
+							- for(var i = 1; i < max; i++)
+								li.item
+									img.img(src='img/img-' + i + '.jpg' alt='avatar')
+							li.item.item__count
+								| 4+
+				.inner__bottom
+					h2.card__title This is an awesome title for the card.
+					p.card__txt And this is a paragraph for the real awesomeness of the card.

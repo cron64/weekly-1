@@ -1,0 +1,236 @@
+body {
+  font-family: Arial, sans-serif;
+}
+body ul li {
+  list-style: none;
+}
+body .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ffc42a 0%, #ffc42a 50%, #fff 50%, #fff 100%);
+}
+body .stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+}
+body .stage .card {
+  height: 100%;
+  width: 250px;
+  position: relative;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+}
+body .stage .card:hover .inner__top {
+  transform: scale(1);
+  box-shadow: 0 0px 18px rgba(0,0,0,0);
+}
+body .stage .card:hover .inner__top .like {
+  animation: pop-in 0.2s forwards;
+  animation-delay: 0.15s;
+}
+body .stage .card:hover .inner__top .like .pop-in__child {
+  animation: pop-in__child 0.3s forwards;
+  animation-delay: 0.2s;
+}
+body .stage .card .inner__bottom {
+  padding: 0 20px;
+}
+body .stage .card .inner__bottom .card__title {
+  font-size: 1.2em;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+body .stage .card .inner__bottom .card__txt {
+  font-size: 0.8em;
+  font-weight: 100;
+  color: #808080;
+}
+body .stage .card .inner__top {
+  will-change: transform, box-shadow;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 50%;
+  top: -20px;
+  position: relative;
+  background: #000;
+  width: 100%;
+  transform: scale(0.9);
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+  background-image: url("../img/top-bg.jpg");
+  background-size: cover;
+}
+body .stage .card .inner__top .avatars {
+  display: inline-block;
+}
+body .stage .card .inner__top .avatars .list {
+  padding: 0;
+}
+body .stage .card .inner__top .avatars .list .item {
+  transition: all 0.15s ease;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -15px;
+  opacity: 0;
+}
+body .stage .card .inner__top .avatars .list .item__count {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  color: #fff;
+  line-height: 2em;
+}
+body .stage .card .inner__top .avatars .list .item .img {
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+body .stage .card .inner__top .like {
+  background: #fff;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+  opacity: 0;
+}
+body .stage .card:hover .inner__top .item:first-child,
+body .stage .card:hover .inner__top .item:nth-child(2),
+body .stage .card:hover .inner__top .item:nth-child(3),
+body .stage .card:hover .inner__top .item:last-child {
+  opacity: 1;
+}
+body .stage .card:hover .inner__top .item:first-child {
+  left: 20px;
+}
+body .stage .card:hover .inner__top .item:nth-child(2) {
+  left: 40px;
+}
+body .stage .card:hover .inner__top .item:nth-child(3) {
+  left: 60px;
+}
+body .stage .card:hover .inner__top .item:last-child {
+  left: 80px;
+}
+.pop-in {
+  animation: pop-in 1s forwards;
+}
+.pop-in__child {
+  opacity: 0;
+}
+@-moz-keyframes pop-in {
+  0% {
+    bottom: -30px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -20px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes pop-in {
+  0% {
+    bottom: -30px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -20px;
+    opacity: 1;
+  }
+}
+@-o-keyframes pop-in {
+  0% {
+    bottom: -30px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -20px;
+    opacity: 1;
+  }
+}
+@keyframes pop-in {
+  0% {
+    bottom: -30px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -20px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes pop-in__child {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes pop-in__child {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-o-keyframes pop-in__child {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes pop-in__child {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

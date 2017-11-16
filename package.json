@@ -1,0 +1,14 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "http-server .",
+    "stylus": "stylus -w styl/master.styl -o css/",
+    "pug": "pug -w index.pug"
+  },
+  "author": "Arturo Fuentes",
+  "license": "ISC"
+}
