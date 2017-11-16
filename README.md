@@ -1,2 +1,2 @@
 # weekly-1
-Weekly 1
+Weekly animation challenge
